@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Fragrances</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="icon" href="media/logo.png" type="image/x-icon">
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#inicio" class="brand-logo scroll-link" aria-label="Ir al inicio">
+                <span class="brand-placeholder"><img src="media/logo.png" alt=""></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Principal">
+                <ul>
+                    <li><a href="#inicio" class="scroll-link">Inicio</a></li>
+                    <li><a href="#perfumes" class="scroll-link">Perfumes</a></li>
+                    <li><a href="#ofertas" class="scroll-link">Ofertas</a></li>
+                    <li><a href="contacto.html" target="_blank" rel="noopener noreferrer">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="nav-icon-btn nav-cart" aria-label="Carrito">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </a>
+                    <a href="#" class="nav-icon-btn nav-search" aria-label="Buscar">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="catalogo" id="inicio">
+        <section id="primera-seccion" class="hero">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <h1 class="hero-title">Elegancia en cada<br>Aroma</h1>
+                    <p class="hero-sub">Bienvenidos</p>
+                    <a href="#perfumes" class="btn btn-hero-primary scroll-link">Compra ahora</a>
+                </div>
+                <div class="hero-showcase">
+                    <div class="cylinder" aria-hidden="true">
+                        <div class="cylinder-glow"></div>
+                        <div class="cylinder-glass">
+                            <div class="perfume-placeholder"><img class="parfam" src="media/PARFUMS DE LUXE (1).jpg.jpeg" alt="Perfume Hero"></div>
+                        </div>
+                    </div>
+                    <a href="#perfumes" class="btn btn-hero-secondary scroll-link">Explora nuestra colección</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="perfumes" class="seccion">
+            <div class="seccion-titulo">
+                <h2>Explora nuestra coleccion de Caballeros</h2>
+                <span class="decor-line" aria-hidden="true"></span>
+            </div>
+            <div class="grid-perfumes">
+                <label for="modal-cab-1-toggle" class="card-perfume" aria-label="Abrir One Million">
+                    <div class="img-slot"><img src="media/one.png" alt=""></div>
+                    <h3>One million</h3>
+                </label>
+                <label for="modal-cab-2-toggle" class="card-perfume" aria-label="Abrir Acqua Di">
+                    <div class="img-slot"><img src="media/aqua.png" alt=""></div>
+                    <h3>Acqua Di Gio</h3>
+                </label>
+                <label for="modal-cab-3-toggle" class="card-perfume" aria-label="Abrir Valentino">
+                    <div class="img-slot"><img src="media/valentino.png" alt=""></div>
+                    <h3>Valentino</h3>
+                </label>
+                <label for="modal-cab-4-toggle" class="card-perfume" aria-label="Abrir sauvage">
+                    <div class="img-slot"><img src="media/savage.png" alt=""></div>
+                    <h3>Sauvage</h3>
+                </label>
+            </div>
+        </section>
+        <section id="ofertas" class="seccion">
+            <div class="seccion-titulo">
+                <h2>Explora nuestra coleccion de Dama</h2>
+                <span class="decor-line" aria-hidden="true"></span>
+            </div>
+            <div class="grid-perfumes">
+                <label for="modal-dam-1-toggle" class="card-perfume" aria-label="Abrir thank u next">
+                    <div class="img-slot"><img src="media/ariana.png" alt=""></div>
+                    <h3>Thank u next</h3>
+                </label>
+                <label for="modal-dam-2-toggle" class="card-perfume" aria-label="Abrir Dama bora la donna">
+                    <div class="img-slot"><img src="media/dior.png" alt=""></div>
+                    <h3>Donna born in Roma</h3>
+                </label>
+                <label for="modal-dam-3-toggle" class="card-perfume" aria-label="Abrir Burbuja Vitti">
+                    <div class="img-slot"><img src="media/yum.png" alt=""></div>
+                    <h3>Yum Yum</h3>
+                </label>
+                <label for="modal-dam-4-toggle" class="card-perfume" aria-label="Abrir Lady Million">
+                    <div class="img-slot"><img src="media/pastel.png" alt=""></div>
+                    <h3>Berry on top</h3>
+                </label>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto-final">
+            <a href="contacto.html" target="_blank" rel="noopener noreferrer" class="btn-contacto">Contactenos</a>
+        </section>
+    </main>
+    <input type="checkbox" id="modal-cab-1-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-cab-1" class="modal">
+        <label for="modal-cab-1-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-cab-1-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/one.png" alt=""></div>
+            <div class="modal-info">
+                <h3>One Millon</h3>
+                <h4>Parfum</h4>
+                <p>Un aroma seductor y masculino con una mezcla de frescura y dulzor especiado al principio, que evoluciona hacia un fondo rico y cálido, ideal para la noche, eventos sociales o climas más fríos.</p>
+                <strong>$650.000</strong>
+                <ul>
+                    <li class="tag-calido-especiado">Calido especiado</li>
+                    <li class="tag-carmelo">Canelo</li>
+                    <li class="tag-glicina">Glicina</li>
+                    <li class="tag-ambar">Ambar</li>
+                    <li class="tag-cuero">Cuero</li>
+                    <li class="tag-rosas">Rosas</li>
+                    <li class="tag-maderado">Maderado</li>
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+    <input type="checkbox" id="modal-cab-2-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-cab-2" class="modal">
+        <label for="modal-cab-2-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-cab-2-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/aqua.png" alt=""></div>
+            <div class="modal-info">
+                <h3>Acqua Di Gio</h3>
+                <h4>Parfum</h4>
+                <p>Ofrece una combinación equilibrada entre notas cítricas y acuáticas, con un corazón suave y un fondo que aporta calidez y sofisticación.</p>
+                <strong>$450.000</strong>
+                <ul>
+                    <li class="tag-lima">Lima</li>
+                    <li class="tag-bergamota">Bergamota</li>
+                    <li class="tag-jazmin">Jazmin</li>
+                    <li class="tag-mandarina">Mandarina</li>
+                    <li class="tag-naranja">Naranja</li>
+                    <li class="tag-neroli">Neroli</li>
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+    <input type="checkbox" id="modal-cab-3-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-cab-3" class="modal">
+        <label for="modal-cab-3-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-cab-3-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/valentino.png" alt=""></div>
+            <div class="modal-info">
+                <h3>Valentino</h3>
+                <h4>Parfum</h4>
+                <p>Valentino es una fragancia elegante y sofisticada, de estilo atemporal, que combina lujo y sensualidad con un carácter moderno.</p>
+                <strong>$550.000</strong>
+                <ul>
+                    <li class="tag-maderado-dos">Amaderado</li>
+                    <li class="tag-nuez">Nueces</li>
+                    <li class="tag-calido-especiado-dos">Calido especiado</li>
+                    <li class="tag-chocolate">Chocolate  </li>
+                    <li class="tag-cuero">Cuero</li>
+                    <li class="tag-cafe">Cafe</li>
+                    <li class="tag-citrico">Citrico</li>
+                    <li class="tag-dulce">Dulce</li>
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+    <input type="checkbox" id="modal-cab-4-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-cab-4" class="modal">
+        <label for="modal-cab-4-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-cab-4-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/savage.png" alt=""></div>
+            <div class="modal-info">
+                <h3>sauvage</h3>
+                <h4>Parfum</h4>
+                <p>Sauvage es una fragancia suave y elegante, con un aroma equilibrado que transmite frescura, sofisticación y un toque de sensualidad discreta.</p>
+                <strong>$572.000</strong>
+                <ul>
+                    <li class="tag-citrico-dos">Citrico</li>
+                    <li class="tag-fresco">Fresco</li>
+                    <li class="tag-especiado">Especiado</li>
+                    <li class="tag-maderado-tres">Amaderado</li>
+                    <li class="tag-ambarino">Ambarino</li>
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+    <input type="checkbox" id="modal-dam-1-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-dam-1" class="modal">
+        <label for="modal-dam-1-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-dam-1-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/ariana.png" alt=""></div>
+            <div class="modal-info">
+                <h3>thank u next</h3>
+                <h4>Parfum</h4>
+                <p>Thank U, Next es una fragancia dulce y juvenil, suave y moderna, ideal para el uso diario.</p>
+                <strong>$330.000</strong>
+                <ul>
+                    <li class="tag-coco">Coco</li>
+                    <li class="tag-notas">Notas dulces</li>
+                    <li class="tag-frutales">Frutal</li>
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+    <input type="checkbox" id="modal-dam-2-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-dam-2" class="modal">
+        <label for="modal-dam-2-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-dam-2-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/dior.png" alt=""></div>
+            <div class="modal-info">
+                <h3>Donna born ln Roma</h3>
+                <h4>Parfum</h4>
+                <p>Donna Born In Roma es una fragancia femenina moderna y elegante que celebra la individualidad, inspirada en Roma y la alta costura italiana, fusionando tradición con una actitud contemporánea y audaz.</p>
+                <strong>$623.000</strong>
+                <ul>
+                    <li class="tag-amarado-1">Amaderado</li>
+                    <li class="tag-avainillado">Avainillado</li>
+                    <li class="tag-afrutado">Afrutado</li>
+                    <li class="tag-atalcado">Atalcado</li>
+                    <li class="tag-floral">Florales</li>
+                    <li class="tag-almizcado">Almizclado</li>
+                    <li class="tag-citrico-tres">citrico</li   >
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+    <input type="checkbox" id="modal-dam-3-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-dam-3" class="modal">
+        <label for="modal-dam-3-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-dam-3-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/yum2.png" alt=""></div>
+            <div class="modal-info">
+                <h3>Yum Yum</h3>
+                <h4>Parfum</h4>
+                <p>Yum Yum es una fragancia femenina dulce y frutal, alegre y juvenil, ideal para el uso diario y para quienes disfrutan aromas suaves, golosos y femeninos.</p>
+                <strong>$592.000</strong>
+                <ul>
+                    <li class="tag-afrutados">Afrutado</li>
+                    <li class="tag-atalcado-dos">Atalcado</li>
+                    <li class="tag-acerezado">Acerezado</li>
+                    <li class="tag-amaderaido">Amaderado</li>
+                    <li class="tag-rosas-dos">Rosas</li>
+                    <li class="tag-dulce-dos">Dulce</li>
+                    <li class="tag-floral-blanco">Floral blanco</li>
+                    <li class="tag-avainilladoss">Avainillado</li>
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+    <input type="checkbox" id="modal-dam-4-toggle" class="modal-toggle" aria-hidden="true">
+    <section id="modal-dam-4" class="modal">
+        <label for="modal-dam-4-toggle" class="modal-overlay" aria-label="Cerrar modal"></label>
+        <article class="modal-card">
+            <label for="modal-dam-4-toggle" class="cerrar-modal" aria-label="Cerrar">&times;</label>
+            <div class="modal-image"><img src="media/pastel.png" alt=""></div>
+            <div class="modal-info">
+                <h3>Berry on top</h3>
+                <h4>Parfum</h4>
+                <p>Presenta notas cremosas y avainilladas con un fondo cálido y reconfortante, dejando una estela dulce, adictiva y gourmand.</p>
+                <strong>$550.000</strong>
+                <ul>
+                    <li class="tag-dulce-tres">Dulce</li>
+                    <li class="tag-frutal-dos">Frutal</li>
+                    <li class="tag-gourmand">Gourmand</li>
+                    <li class="tag-cremoso">Cremoso</li>
+                    <li class="tag-s">Avainillado</li>
+                    <li class="tag-azucarado">Azucarado</li>
+                </ul>
+                <button type="button">Agregar al carrito</button>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
