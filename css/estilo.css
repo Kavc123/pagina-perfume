@@ -1,0 +1,1122 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #8c4f3d;
+    --bg-header: #bf775b;
+    --line-color: #f4d7c7;
+    --text-light: #f9f1ea;
+    --text-cream: #fff8f1;
+    --card-shadow: rgba(0, 0, 0, 0.28);
+    --modal-bg: #ba755b;
+    --tag-bg: #b95f5a;
+    --tag-text: #ffe2b4;
+    --btn-bg: #ad5a3d;
+    --btn-text: #fff0dc;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg-main);
+    color: var(--text-light);
+    font-family: "Cormorant Garamond", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.catalogo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.seccion-titulo {
+    background: var(--bg-header);
+    padding: 1.2rem 1rem 0.9rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.seccion-titulo h2 {
+    margin: 0;
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    font-weight: 600;
+    color: var(--text-cream);
+    background-color: #bf775b;
+}
+
+.decor-line {
+    display: inline-block;
+    width: 120px;
+    height: 1px;
+    background: var(--line-color);
+    margin-top: 0;
+    position: relative;
+}
+
+.decor-line::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    transform: translateX(-50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    background: var(--line-color);
+}
+
+.grid-perfumes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+    padding: 3.8rem 0.7rem;
+    background-color: #bf775b;
+}
+
+.card-perfume {
+    text-decoration: none;
+    color: var(--text-cream);
+    transition: transform 0.2s ease;
+}
+
+a.card-perfume:hover {
+    transform: translateY(-3px);
+}
+
+.img-slot {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background:
+        linear-gradient(145deg, rgba(14, 16, 25, 0.95), rgba(54, 36, 30, 0.7));
+    display: grid;
+    place-content: center;
+    padding: 0.4rem;
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 10px 18px var(--card-shadow);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    overflow: hidden;
+}
+
+.card-perfume h3 {
+    margin: 0.35rem 0 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.card-perfume:hover .img-slot {
+    transform: scale(1.04);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.34);
+}
+
+img.parfam {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Muestra la imagen completa, añade "aire" si sobra espacio */
+    object-fit: cover   ;
+    object-position: center;
+    background: #1f1a19;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2500;
+    padding: 1rem;
+}
+
+.modal-toggle {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-toggle:checked + .modal {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(680px, 100%);
+    height: 90%;
+    border-radius: 6px;
+    background: var(--modal-bg);
+    padding: 0.9rem;
+    display: grid;
+    grid-template-columns: minmax(210px, 260px) 1fr;
+    gap: 0.85rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 0.45rem;
+    right: 0.55rem;
+    color: #fff3ea;
+    text-decoration: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-image {
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: linear-gradient(150deg, #1a2531, #3b2f29);
+    min-height: 360px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.85rem;
+    overflow: hidden;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.modal-info {
+    background: rgba(255, 245, 236, 0.97);
+    border-radius: 6px;
+    padding: 1rem 0.9rem;
+    color: #22140f;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: "Outfit", sans-serif;
+}
+
+.modal-info h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.modal-info h4 {
+    margin: 0;
+    font-size: 1.45rem;
+    font-family: "Cormorant Garamond", serif;
+}
+
+.modal-info p {
+    margin: 0.2rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    background-color: rgba(255, 245, 236, 0.85);
+}
+
+.modal-info strong {
+    margin-top: 0.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.modal-info ul {
+    list-style: none;
+    margin: 0.3rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.2rem;
+}
+
+.modal-info li {
+    background: var(--tag-bg-item, var(--tag-bg));
+    color: var(--tag-text-item, var(--tag-text));
+    border-radius: 999px;
+    font-size: 0.72rem;
+    padding: 0.09rem 0.5rem;
+    text-align: center;
+}
+
+/* Colores individuales (puedes cambiarlos libremente) */
+.tag-calido-especiado {
+    --tag-bg-item: #AB4949;
+    --tag-text-item: #ffe3c5;
+}
+
+.tag-carmelo {
+    --tag-bg-item: #844F3E;
+    --tag-text-item: #ffe3c5;
+    width: 95%;
+}
+
+.tag-glicina {
+    --tag-bg-item: #E4E6C1;
+    --tag-text-item: #ffffff;
+    width: 90%;
+}
+
+.tag-ambar {
+    --tag-bg-item: #FE9668;
+    --tag-text-item: #ffffff;
+    width: 85%;
+}
+
+.tag-cuero {
+    --tag-bg-item: #C97D5C;
+    --tag-text-item: #ffffff;
+    width: 80%;
+}
+
+.tag-rosas {
+    --tag-bg-item: #C05254;
+    --tag-text-item: #ffffff;
+    width: 75%;
+}
+
+.tag-maderado {
+    --tag-bg-item: #C97D5C;
+    --tag-text-item: #ffffff;
+    width: 70%;
+}
+
+.tag-lima {
+    --tag-bg-item: #CBEFA7;
+    --tag-text-item: #ffffff;
+}
+
+.tag-bergamota {
+    --tag-bg-item: #B3E97C;
+    --tag-text-item: #ffffff;
+    width: 95%;
+}
+
+.tag-jazmin {
+    --tag-bg-item: #EEBDAF;
+    --tag-text-item: #ffffff;
+    width: 90%;
+}
+
+.tag-mandarina {
+    --tag-bg-item: #FB8C6C;
+    --tag-text-item: #ffffff;
+    width: 85%;
+}
+
+.tag-naranja {
+    --tag-bg-item: #FFB7A2;
+    --tag-text-item: #ffffff;
+    width: 80%;
+}
+
+.tag-neroli {
+    --tag-bg-item: #FB8C6C;
+    --tag-text-item: #ffffff;
+    width: 75%;
+}
+
+.tag-maderado-dos {
+    --tag-bg-item: #DA8557;
+    --tag-text-item: #ffffff;
+}
+
+.tag-nuez {
+    --tag-bg-item: #CF816A;
+    --tag-text-item: #ffffff;
+    width:  95%;
+}
+
+.tag-calido-especiado-dos {
+    --tag-bg-item: #AB4949;
+    --tag-text-item: #ffffff;
+    width:  90%;
+}
+
+.tag-chocolate {
+    --tag-bg-item: #854F3E;
+    --tag-text-item: #ffffff;
+    width:  85%;
+}
+
+.tag-cuero {
+    --tag-bg-item: #B36C4C;
+    --tag-text-item: #ffffff;
+    width:  80%;
+}
+
+.tag-cafe {
+    --tag-bg-item: #7E4B3C;
+    --tag-text-item: #ffffff;
+    width:  75%;
+}
+
+.tag-citrico {
+    --tag-bg-item: #E6A8A8;
+    --tag-text-item: #ffffff;
+    width:  70%;
+}
+
+.tag-dulce {
+    --tag-bg-item: #E4E6C1;
+    --tag-text-item: #ffffff;
+    width:  65%;
+}
+
+.tag-citrico-dos{
+    --tag-bg-item: #E4E6C1;
+    --tag-text-item: #ffffff;    
+}
+
+.tag-fresco {
+    --tag-bg-item: #EEBDAF;
+    --tag-text-item: #ffffff; 
+    width: 95%;
+}
+
+.tag-especiado {
+    --tag-bg-item: #AB4949;
+    --tag-text-item: #ffffff; 
+    width: 90%;
+}
+
+.tag-maderado-tres {
+    --tag-bg-item: #AB6749;
+    --tag-text-item: #ffffff; 
+    width: 85%;
+}
+
+.tag-ambarino {
+    --tag-bg-item: #D98457;
+    --tag-text-item: #ffffff; 
+    width: 80%;
+}
+
+.tag-coco {
+    --tag-bg-item: #EEBDAF;
+    --tag-text-item: #ffffff; 
+}
+
+.tag-notas {
+    --tag-bg-item: #E6C1DB;
+    --tag-text-item: #ffffff; 
+    width: 95%;
+}
+
+.tag-frutales {
+    --tag-bg-item: #A1EB9D;
+    --tag-text-item: #ffffff; 
+    width: 90%;
+}
+
+.tag-amarado-1 {
+    --tag-bg-item: #DA8557;
+    --tag-text-item: #ffffff; 
+}
+
+.tag-avainilladoss {
+    --tag-bg-item: #B8BDBA;
+    --tag-text-item: #ffffff; 
+    width: 65%;
+}
+
+.tag-afrutado {
+    --tag-bg-item: #C6F597;
+    --tag-text-item: #ffffff; 
+    width: 90%;
+}
+
+.tag-atalcado {
+    --tag-bg-item: #F4B6B6;
+    --tag-text-item: #ffffff; 
+    width: 85%;
+}
+
+.tag-floral {
+    --tag-bg-item: #CF816A;
+    --tag-text-item: #ffffff; 
+    width: 80%;
+}
+
+.tag-almizcado {
+    --tag-bg-item: #E4E6C1;
+    --tag-text-item: #ffffff; 
+    width: 75%;
+}
+
+.tag-citrico-tres {
+    --tag-bg-item: #CED460;
+    --tag-text-item: #ffffff; 
+    width: 70%;
+}
+
+.tag-afrutados {
+    --tag-bg-item: #CED460;
+    --tag-text-item: #ffffff; 
+}
+
+.tag-atalcado-dos {
+    --tag-bg-item: #DA5B57;
+    --tag-text-item: #ffffff;
+    width: 95%; 
+}
+
+.tag-acerezado {
+    --tag-bg-item: #FB4444;
+    --tag-text-item: #ffffff; 
+    width: 90%;
+}
+
+.tag-amaderaido {
+    --tag-bg-item: #AB6749;
+    --tag-text-item: #ffffff; 
+    width: 85%;
+}
+
+.tag-rosas-dos {
+    --tag-bg-item: #EA4473;
+    --tag-text-item: #ffffff; 
+    width: 85%;
+}
+
+.tag-dulce-dos {
+    --tag-bg-item: #DA5B57;
+    --tag-text-item: #ffffff; 
+    width: 80%;
+}
+
+.tag-floral-blanco {
+    --tag-bg-item: #EEBEA5;
+    --tag-text-item: #ffffff; 
+    width: 75%;
+}
+
+.tag-avainillados {
+    --tag-bg-item: #DAB157;
+    --tag-text-item: #ffffff; 
+    width: 70%;
+}
+
+.tag-dulce-tres {
+    --tag-bg-item: #FDA3FF;
+    --tag-text-item: #ffffff; 
+}
+
+.tag-frutal-dos {
+    --tag-bg-item: #CED460;
+    --tag-text-item: #ffffff; 
+    width: 95%;
+}
+
+.tag-gourmand {
+    --tag-bg-item: #CF816A;
+    --tag-text-item: #ffffff; 
+    width: 90%;
+}
+
+.tag-cremoso {
+    --tag-bg-item: #C78D7C;
+    --tag-text-item: #ffffff; 
+    width: 85%;
+}
+
+.tag-s {
+    --tag-bg-item: #F4B99A;
+    --tag-text-item: #ffffff; 
+    width: 80%;
+}
+
+.tag-azucarado {
+    --tag-bg-item: #EBA4BE;
+    --tag-text-item: #ffffff; 
+    width: 75%;
+}
+
+.modal-info button {
+    margin-top: 0.35rem;
+    border: 0;
+    border-radius: 5px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 0.95rem;
+    padding: 0.45rem 0.65rem;
+    cursor: pointer;
+    font-family: "Cormorant Garamond", serif;
+}
+
+@media (max-width: 760px) {
+    .grid-perfumes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .modal-card {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-image {
+        min-height: 270px;
+    }
+}
+/* Estilos Generales */
+:root {
+    --cream-crest: #ebe4d9;
+    --nav-pill: #f0e4dc;
+    --nav-text: #2c1810;
+    --gold: #b8860b;
+    --gold-dark: #8a6a1f;
+    --terracotta: #c45c3a;
+    --terracotta-deep: #a84830;
+    --chocolate: #3d261c;
+    --hero-brown-top: #4a3228;
+    --hero-brown-mid: #6b4030;
+}
+
+body {
+    font-family: 'Outfit', 'Segoe UI', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* --- CONTENIDO PRINCIPAL: Color celeste --- */
+main {
+    display: block;
+    width: 100%;
+    background-color: #cccfff; /* Color celeste: main */
+}
+
+/* --- CABECERA + NAVEGACIÓN (Andrea Fragrances) --- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.header-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 4% 0 0;
+    padding-left: 0;
+    min-height: 72px;
+    gap: 1rem;
+}
+
+.logo-container {
+    position: relative; /* importante para posicionar dentro */
+}
+
+/* Fondo (Ellipse gris) */
+.logo-bg {
+    position: absolute;
+    width: 308px;
+    height: 288px;
+    left: 48px;
+    top: -4px;
+    background: #D9D9D9;
+    border-radius: 50%; /* esto lo hace un círculo */
+}
+
+/* Imagen (logo) */
+.logo-img {
+    position: absolute;
+    width: 296px;
+    height: 276px;
+    left: 86px;
+    top: -4px;
+    background-image: url("646195164_941176298447162_484479190095348156_n.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    padding: 1.25rem 0 1rem;
+    margin-left: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem 0.65rem;
+    align-items: center;
+}
+
+.main-nav ul li a {
+    display: inline-block;
+    padding: 0.5rem 1.15rem;
+    border-radius: 999px;
+    background: var(--nav-pill);
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.main-nav ul li a:hover {
+    background: #e8d5c8;
+    color: #1a0f0a;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: 0.25rem;
+}
+
+.nav-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.nav-icon-btn:hover {
+    opacity: 0.75;
+    transform: scale(1.05);
+}
+
+.nav-cart {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+}
+
+.nav-cart svg {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-search {
+    padding: 0.35rem;
+}
+
+/* --- HERO --- */
+.hero {
+    position: relative;
+    min-height: clamp(520px, 78vh, 720px);
+    padding: 6rem 5% 4rem;
+    padding-top: max(6rem, calc(4rem + 2.5rem));
+    background-color: var(--hero-brown-mid);
+    background-image:
+        radial-gradient(ellipse 120% 80% at 50% 0%, rgba(255, 255, 255, 0.08) 0%, transparent 45%),
+        linear-gradient(
+            180deg,
+            #3d2a22 0%,
+            #5c3d30 38%,
+            #8b4a38 62%,
+            #a65a42 100%
+        );
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+    align-items: center;
+}
+
+.hero-copy {
+    text-align: left;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #fff;
+    margin: 0 0 0.75rem;
+    background: none;
+    padding: 0;
+    display: block;
+}
+
+.hero-sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 1.75rem;
+    background: none;
+    padding: 0;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-hero-primary {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 0.75rem 1.85rem;
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--terracotta) 0%, var(--terracotta-deep) 100%);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.hero-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.cylinder {
+    position: relative;
+    width: min(280px, 70vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cylinder-glow {
+    width: 72%;
+    height: 28px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #fff 0%, rgba(255, 255, 255, 0.65) 45%, transparent 72%);
+    filter: blur(2px);
+    margin-bottom: -14px;
+    z-index: 2;
+}
+
+.cylinder-glass {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    max-height: 340px;
+    border-radius: 999px / 18%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.14) 0%,
+        rgba(255, 255, 255, 0.06) 35%,
+        rgba(255, 255, 255, 0.02) 50%,
+        rgba(255, 255, 255, 0.08) 65%,
+        rgba(255, 255, 255, 0.16) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+        inset 0 0 40px rgba(255, 255, 255, 0.12),
+        0 20px 50px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.perfume-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 160px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen del perfume: añade class="perfume-img" en el <img>; el placeholder se oculta solo */
+.cylinder-glass:has(.perfume-img) .perfume-placeholder {
+    display: none;
+}
+
+.hero .perfume-img {
+    width: auto;
+    height: 85%;
+    max-width: 70%;
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+}
+
+.btn-hero-secondary {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.7rem 1.75rem;
+    border-radius: 999px;
+    background: rgba(45, 30, 24, 0.75);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: min(100%, 320px);
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(35, 22, 18, 0.9);
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 900px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .logo-crest {
+        margin-bottom: -3rem;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        padding-right: 4%;
+    }
+
+    .logo-crest {
+        width: 100%;
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        border-radius: 0 0 40px 40px;
+    }
+
+    .main-nav {
+        justify-content: center;
+        padding-top: 0.75rem;
+    }
+}
+
+/* --- SECCIONES Y CONTENEDORES --- */
+
+.container { 
+    padding: 80px 10%; 
+    text-align: center;
+    border: 2px dashed #f79300; /* Borde naranja: Contenedor grupo */
+    margin: 20px;
+}
+
+/* Grillas */
+.services-grid, .gallery, .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    background-color: #8cc63f; /* Color Verde: Contenedor genérico */
+    padding: 20px;
+}
+
+.service-item, .gallery-item, .card {
+    background: white;
+    padding: 40px;
+    border-radius: 5px;
+    border: 2px dashed #009200; /* Borde verde: Contenedor grupo horizontal */
+    font-weight: bold;
+}
+
+/* --- TEXTOS --- */
+h1 { background-color: #e6e6e6; padding: 10px; display: inline-block; }
+h2 { background-color: #666666; color: white; padding: 5px 15px; display: inline-block; }
+p { background-color: #f6fe00; color: #333; padding: 5px; }
+
+/* --- PIE DE PÁGINA --- */
+footer { 
+    background-color: #754c00; /* Color café: Pie de página */
+    color: white; 
+    padding: 40px; 
+    text-align: center; 
+}
+
+button {
+    background: #8cc63f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ===== Ajustes finales home + navegacion ===== */
+.site-header {
+    background: #f4f1ed;
+}
+
+.header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    width: 110px;
+    min-height: 76px;
+    border-radius: 0 0 66px 66px;
+    background: #e4ded4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.brand-placeholder {
+    font-family: "Outfit", sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: #8b835d;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+}
+
+.catalogo {
+    max-width: none;
+    padding-bottom: 0;
+}
+
+.hero {
+    margin-top: 0;
+}
+
+.hero-title,
+.hero-sub {
+    background: transparent;
+    color: #fff4e8;
+}
+
+.hero-copy .btn-hero-primary,
+.hero-showcase .btn-hero-secondary {
+    text-decoration: none;
+}
+
+.hero .perfume-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: "Outfit", sans-serif;
+    letter-spacing: 0.08em;
+    font-size: 0.76rem;
+}
+
+.seccion {
+    background: var(--bg-main);
+}
+
+.seccion-titulo h2 {
+    background: transparent;
+    padding: 0;
+    color: var(--text-cream);
+}
+
+.card-perfume h3 {
+    background: transparent;
+    padding: 0;
+    color: var(--text-cream);
+}
+
+.contacto-final {
+    background: #7f4637;
+    text-align: center;
+    padding: 3rem 1rem 3.4rem;
+}
+
+.contacto-final h2 {
+    margin: 0 0 1rem;
+    background: transparent;
+    color: #fff6ee;
+    font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+}
+
+.btn-contacto {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(180deg, #d06f4b 0%, #b55335 100%);
+    color: #fff2e7;
+    padding: 0.65rem 1.35rem;
+    border-radius: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.header-inner {
+    min-height: 62px;
+}
+
+.main-nav {
+    gap: 0.55rem 0.95rem;
+    padding: 0.8rem 0 0.65rem;
+}
+
+.main-nav ul li a {
+    padding: 0.4rem 0.95rem;
+    font-size: 0.82rem;
+}
+
+.nav-cart {
+    width: 38px;
+    height: 38px;
+}
+
+.nav-search {
+    padding: 0.2rem;
+}
+
+@media (max-width: 900px) {
+    .brand-logo {
+        width: 160px;
+        min-height: 78px;
+        border-radius: 0 0 46px 46px;
+    }
+}
